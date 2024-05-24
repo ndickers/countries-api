@@ -1,4 +1,4 @@
- [
+[
   {
     "name": "Afghanistan",
     "topLevelDomain": [".af"],
@@ -85,6 +85,7 @@
     "latlng": [60.116667, 19.9],
     "demonym": "Ålandish",
     "area": 1580,
+    "borders": ["UZB", "TJK", "CHN"],
     "timezones": ["UTC+02:00"],
     "nativeName": "Åland",
     "numericCode": "248",

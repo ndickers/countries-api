@@ -13,38 +13,44 @@
     <title>Countries</title>
   </head>
   <body>
-    <header>
-      <div class="mode">
-        <h1>Where in the world</h1>
-        <button>Dark mode</button>
-      </div>
-
-      <div class="search">
-        <!-- search icon -->
-        <input type="text" name="" placeholder="Search for a country" id="" />
-      </div>
-    </header>
-    <main>
-      <select name="region" id="region">
-        <option value="Africa">Africa</option>
-        <option value="Americas">America</option>
-        <option value="Asia">Asia</option>
-        <option value="Europe">Europe</option>
-        <option value="Oceania">Oceania</option>
-        <option selected value="all">Filter by Region</option>
-      </select>
-      <section class="countries-section">
-        <a href="./details.html">
+    <div class="container">
+      <header>
+        <div class="mode">
+          <h1>Where in the world</h1>
+          <button>Dark mode</button>
+        </div>
+        <div class="search">
+          <!-- search icon -->
+          <input
+            type="text"
+            name=""
+            placeholder="Search for a country"
+            id="search"
+          />
+          <select name="region" id="region">
+            <option value="Africa">Africa</option>
+            <option value="Americas">America</option>
+            <option value="Asia">Asia</option>
+            <option value="Europe">Europe</option>
+            <option value="Oceania">Oceania</option>
+            <option selected value="all">Filter by Region</option>
+          </select>
+        </div>
+      </header>
+      <main>
+        <section class="countries-section">
           <article>
             <img src="https://flagcdn.com/ax.svg" alt="" srcset="" />
-            <h2>Germany</h2>
-            <p>Population: <span>81,770,900</span></p>
-            <p>Region: <span>Europe</span></p>
-            <p>Capital: <span>Berlin</span></p>
+            <div>
+              <h2>Germany</h2>
+              <p>Population: <span>81,770,900</span></p>
+              <p>Region: <span>Europe</span></p>
+              <p>Capital: <span>Berlin</span></p>
+            </div>
           </article>
-        </a>
-      </section>
-    </main>
+        </section>
+      </main>
+    </div>
     <script type="module" src="./index.js"></script>
   </body>
 </html>
