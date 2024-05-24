@@ -1,0 +1,49 @@
+:root {
+  --dark-blue: hsl(209, 23%, 22%); /*(Dark Mode Elements)*/
+  --very-dark-blue: hsl(207, 26%, 17%); /*(Dark Mode Background)*/
+  --very-dark-blue: hsl(200, 15%, 8%); /*(Light Mode Text)*/
+  --dark-gray: hsl(0, 0%, 52%); /*(Light Mode Input)*/
+  --very-light-gray: hsl(0, 0%, 98%); /*(Light Mode Background)*/
+  --white: hsl(0, 0%, 100%); /*Dark Mode Text & Light Mode Elements*/
+  font-size: 14px;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Nunito Sans", sans-serif;
+}
+header {
+  padding-inline: 1.5rem;
+}
+main {
+  padding-inline: 1.5rem;
+}
+.mode {
+  display: flex;
+  padding-block: 2rem;
+
+  justify-content: space-between;
+  align-items: center;
+}
+h1 {
+  font-size: small;
+}
+input[type="text"] {
+  padding: 1.5rem;
+  inline-size: 100%;
+  display: block;
+  margin-inline: auto;
+  margin-block-end: 2rem;
+}
+img {
+  inline-size: 100%;
+  block-size: auto;
+}
+h2 {
+  margin-block: 1rem;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
