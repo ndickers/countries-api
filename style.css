@@ -29,6 +29,16 @@ main {
 h1 {
   font-size: small;
 }
+button{
+  background: inherit;
+  border: none;
+}
+#region{
+  inline-size: 14rem;
+  padding: 1rem;
+  background: var(--white);
+  border: 2px solid var(--dark-gray);
+}
 input[type="text"] {
   padding: 1.5rem;
   inline-size: 100%;

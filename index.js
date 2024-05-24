@@ -24,21 +24,57 @@ document.addEventListener("DOMContentLoaded", async function () {
 
 function createCountries(countryArray, section) {
   countryArray.forEach((country) => {
-    const createlink = document.createElement("a");
-    createlink.setAttribute("href", "./details.html");
-    createlink.addEventListener("click", nextPage);
-    const article = `<article country= ${country}>
+    const createArticle = document.createElement("article");
+    createArticle.addEventListener("click", function () {
+      const main = document.querySelector("main");
+      document.querySelector(".search").innerHTML = "";
+      window.history.pushState(null, null, "country");
+      const url = window.location.pathname;
+
+      if (url === "/country") {
+        main.innerHTML = detailPage(country);
+      }
+    });
+
+    const article = `
   <img src=${country.flag} alt="" srcset="" />
   <h2>${country.name}</h2>
   <p>Population: <span>${country.population}</span></p>
   <p>Region: <span>${country.region}</span></p>
   <p>Capital: <span>${country.capital}</span></p>
-</article>`;
-    createlink.innerHTML = article;
-    section.appendChild(createlink);
+`;
+    createArticle.innerHTML = article;
+    section.appendChild(createArticle);
   });
 }
 
-function nextPage() {
-  console.log("nooo");
+function detailPage(country) {
+  return `<a href="./index.html">back</a>
+
+  <div>
+    <img src=${country.flags.svg} alt="" srcset="" />
+    <div>
+      <h2>${country.name}</h2>
+      <p>Native Name: <span>Belgie</span></p>
+      <p>Population:<span>${country.population}</span></p>
+      <p>Region: <span>${country.region}</span></p>
+      <p>Sub Region: <span>${country.subregion}</span></p>
+      <p>Capital: <span>${country.capital}</span></p>
+    </div>
+    <div>
+      <p>Top Level Domain: <span>${country.topLevelDomain}</span></p>
+      <p>Currencies:<span>${country.currencies[0].code}</span></p>
+      <p>Languages: <span>${
+        (country.languages[0].name, country.languages[0].native)
+      }</span></p>
+    </div>
+
+    <h3>Border Countries:</h3>
+    <div>
+      <p>${country.borders[0]}</p>
+      <p>${country.borders[1]}</p>
+      <p>${country.borders[2]}</p>
+    </div>
+  </div>
+`;
 }
