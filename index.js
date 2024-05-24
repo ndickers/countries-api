@@ -5,20 +5,28 @@ document.addEventListener("DOMContentLoaded", async function () {
 
   const selectInput = document.querySelector("#region");
 
-  const filteRegion = [];
-  selectInput.addEventListener("change", function ({ target }) {
-    console.log(target.value);
-    countries.filter((country) => {
-      console.log(country.region);
-      return country.region === target.value.forEach((country) => {
-        console.log(country.region);
-      });
-    });
+  selectInput.addEventListener("change", async function ({ target }) {
+    section.innerHTML = "";
+    if (target.value === "all") {
+      await createCountries(countries, section);
+    }
+    const region = await filterCountries(target.value);
+    await createCountries(region, section);
+    // await createCountries(countries, section);
   });
 
-  countries.forEach((country) => {
+  function filterCountries(value) {
+    return countries.filter((country) => country.region === value);
+  }
+
+  await createCountries(countries, section);
+});
+
+function createCountries(countryArray, section) {
+  countryArray.forEach((country) => {
     const createlink = document.createElement("a");
     createlink.setAttribute("href", "./details.html");
+    createlink.addEventListener("click", nextPage);
     const article = `<article country= ${country}>
   <img src=${country.flag} alt="" srcset="" />
   <h2>${country.name}</h2>
@@ -28,9 +36,9 @@ document.addEventListener("DOMContentLoaded", async function () {
 </article>`;
     createlink.innerHTML = article;
     section.appendChild(createlink);
-
-    // createlink.addEventListener("click", function () {
-    //   console.log(country);
-    // });
   });
-});
+}
+
+function nextPage() {
+  console.log("nooo");
+}
