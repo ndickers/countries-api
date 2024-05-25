@@ -6,6 +6,14 @@ document.addEventListener("DOMContentLoaded", async function () {
   const selectInput = document.querySelector("#region");
   const search = document.querySelector("#search");
 
+  search.addEventListener("input", function ({ target }) {
+    const getSearch = countries.filter((country) =>
+      country.name.toLowerCase().includes(target.value.toLowerCase())
+    );
+    section.innerHTML = "";
+    createCountries(getSearch, section);
+  });
+
   // implement dark mode
   const changeMode = document.querySelector(".change-mode-btn");
   changeMode.addEventListener("click", function () {
@@ -18,7 +26,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     } else {
       getRoot.classList.add("dark");
       themeIcon.setAttribute("src", "./assets/dark-icon.png");
-      backIcon.setAttribute("src","./assets/back-arrow-light.png")
+      backIcon.setAttribute("src", "./assets/back-arrow-light.png");
     }
 
     console.log(getRoot);
