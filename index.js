@@ -15,11 +15,11 @@ document.addEventListener("DOMContentLoaded", async function () {
     if (getRoot.classList.contains("dark")) {
       getRoot.classList.remove("dark");
       themeIcon.setAttribute("src", "./assets/light-icon.png");
-      backIcon.setAttribute("src", "./assets/back-arrow.png");
+      backIcon.setAttribute("src","./assets/back-arrow-light.png")
     } else {
       getRoot.classList.add("dark");
       themeIcon.setAttribute("src", "./assets/dark-icon.png");
-      backIcon.setAttribute("src", "./assets/back-arrow-light.png");
+      backIcon.setAttribute("src","./assets/back-arrow-light.png")
     }
 
     console.log(getRoot);
